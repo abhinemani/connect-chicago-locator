@@ -2,7 +2,7 @@ development: &defaults
   fusion_table_id: 1xy_wp4-NhtKPecuDlhsS8MLO0z-g5ayY1OfBhAg
   google_account: 
   google_password: 
-  google_api_key: 
+  google_api_key: AIzaSyBbNag_A0GZeDuTTDVk6OxCn-r4_LxcG-I
   
   flickr_key: 
   flickr_secret: 
