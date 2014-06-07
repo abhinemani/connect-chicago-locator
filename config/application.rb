@@ -61,7 +61,7 @@ module TechLocator
     
     # If you are deploying Rails 3.1 on Heroku force your application to not access the DB
     # or load models when precompiling your assets.
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
     
     config.assets.compress = false
     
