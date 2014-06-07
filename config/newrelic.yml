@@ -38,7 +38,7 @@ common: &default_settings
   # application and reports this data to the New Relic service at 
   # newrelic.com. This global switch is normally overridden for each 
   # environment below. (formerly called 'enabled')
-  monitor_mode: true
+  monitor_mode: false
 
   # Developer mode should be off in every environment but
   # development as it has very high overhead in memory.
@@ -168,12 +168,12 @@ common: &default_settings
     # Error collector is enabled by default. Set this to false to turn
     # it off. This feature is only available at the Professional and above
     # product levels
-    enabled: true
+    enabled: false
     
     # Rails Only - tells error collector whether or not to capture a 
     # source snippet around the place of the error when errors are View 
     # related.
-    capture_source: true    
+    capture_source: false    
     
     # To stop specific errors from reporting to New Relic, set this property
     # to comma separated values.  Default is to ignore routing errors
@@ -244,12 +244,12 @@ test:
 # incurring any user-visible performance degradation.
 production:
   <<: *default_settings
-  monitor_mode: true
+  monitor_mode: false
 
 # Many applications have a staging environment which behaves
 # identically to production.  Support for that environment is provided
 # here.  By default, the staging environment has the agent turned on.
 staging:
   <<: *default_settings
-  monitor_mode: true
+  monitor_mode: false
   app_name: <%= ENV["NEW_RELIC_APP_NAME"] %> (Staging)

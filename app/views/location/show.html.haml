@@ -138,12 +138,6 @@
 
     .row.hidden-phone
       .span7
-        %hr
-        %h4
-          Photos of
-          = @location.organization_name
-        .slideshow
-
         %p
           Have a photo for this location? Upload it to
           %a{:href => "http://flickr.com"} Flickr
@@ -161,11 +155,6 @@
 
   .span5
     .well
-      %p
-        - featured_photo = getFlickrFeaturedPhoto(@location.flickr_tag)
-        - unless featured_photo.nil?
-          %img.img-polaroid{:src => "/location/#{params[:id]}/image.jpg", :title => @location.organization_name, :alt => @location.organization_name, :itemprop => 'image'}
-
       #mapDetail
       %hr
       %p.lead
@@ -219,22 +208,5 @@
     %a.btn.modal-next
       %span Next
       %i.icon-arrow-right.icon-white
-
-= javascript_include_tag "galleria"
-:javascript
-  var flickr = new Galleria.Flickr();
-  flickr.tags('#{@location.flickr_tag}', function(data) {
-      // Should we show or hide the slideshow?
-      var $slideshow = $(".slideshow");
-      if (data.length) {
-        $slideshow.css({height: 400, marginBottom: 20});
-      } else {
-        $slideshow.hide();
-      }
-
-      Galleria.run('.slideshow', {
-          dataSource: data
-      });
-  });
     
 
