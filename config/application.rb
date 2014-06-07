@@ -63,6 +63,8 @@ module TechLocator
     # or load models when precompiling your assets.
     config.assets.initialize_on_precompile = true
     
+    config.assets.compress = false
+    
     ### ActionMailer Config
     config.action_mailer.default :charset => "utf-8"
   end
